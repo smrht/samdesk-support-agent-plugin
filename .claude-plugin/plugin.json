@@ -11,5 +11,9 @@
   "repository": "https://github.com/smrht/samdesk-support-agent-plugin",
   "license": "MIT",
   "displayName": "SamDesk Support",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "privacyPolicyUrl": "https://samdesk.nl/support/plugin/privacy/",
+  "supportUrl": "https://samdesk.nl/nl/contact/",
+  "documentationUrl": "https://samdesk.nl/support/plugin/",
+  "termsOfServiceUrl": "https://samdesk.nl/nl/terms-of-service/"
 }
