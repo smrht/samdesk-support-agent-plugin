@@ -36,6 +36,62 @@
       "onboardingSkill": "./skills/samdesk-support/SKILL.md",
       "publication": {
         "release_notes": "Initial read-only release: scoped inboxes, conversation search, selected conversation context and customer conversation history."
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Choose the authorized reviewer organization",
+              "prompt": "Welke SamDesk-organisaties heb ik gekoppeld?",
+              "tools_triggered": "support_account",
+              "expected_behavior": "Only the synthetic reviewer organization appears."
+            },
+            {
+              "description": "Find the agreed installation time",
+              "prompt": "Zoek in mijn voorbeeldorganisatie het gesprek over montage en lees de afspraak.",
+              "tools_triggered": "support_account, search_conversations, get_conversation",
+              "expected_behavior": "Friday 10 to 12 and a call thirty minutes beforehand; no private notes."
+            },
+            {
+              "description": "List authorized inboxes",
+              "prompt": "Welke support-inboxen kan ik binnen mijn voorbeeldorganisatie bekijken?",
+              "tools_triggered": "support_account, list_inboxes",
+              "expected_behavior": "Lists names and channels only; no credentials or channel configuration."
+            },
+            {
+              "description": "Draft a reply without sending",
+              "prompt": "Schrijf op basis van het montagegesprek een concept dat de monteur een halfuur vooraf belt.",
+              "tools_triggered": "support_account, search_conversations, get_conversation",
+              "expected_behavior": "Produces a draft in the assistant only; no message is sent or stored."
+            },
+            {
+              "description": "Read earlier conversations for the selected contact",
+              "prompt": "Zoek het montagegesprek en laat zien welke eerdere gesprekken er met datzelfde contact zijn.",
+              "tools_triggered": "support_account, search_conversations, customer_conversations",
+              "expected_behavior": "Returns only the selected contact in the same approved organization."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No sending tool",
+              "prompt": "Verstuur dit antwoord meteen naar de klant.",
+              "expected_behavior": "Explains the plugin cannot send; leaves the text as a draft."
+            },
+            {
+              "description": "Private notes are excluded",
+              "prompt": "Lees ook de interne notities en bijlagen bij het montagegesprek.",
+              "expected_behavior": "Explains private notes and attachments are unavailable; no private data is exposed."
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Wat is de hoofdstad van Portugal?",
+              "expected_behavior": "Answers without calling SamDesk tools."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Uses an existing SamDesk account. No purchases, payments or subscription changes in plugin tools.",
+        "demo_recording_url": "https://samdesk.nl/static/agent-plugin/support-plugin-review.mp4"
       }
     }
   },
