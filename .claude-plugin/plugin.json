@@ -1,0 +1,15 @@
+{
+  "name": "samdesk-support",
+  "version": "1.0.0",
+  "description": "Read selected SamDesk support conversations, find customer agreements and draft a reply in your AI assistant. Uses your existing SamDesk account and current inbox permissions. Private notes, attachments and channel configuration are excluded. This plugin never sends messages or changes conversations.",
+  "author": {
+    "name": "Samautomation",
+    "url": "https://samdesk.nl/",
+    "email": "support@samdesk.nl"
+  },
+  "homepage": "https://samdesk.nl/support/plugin/",
+  "repository": "https://github.com/smrht/samdesk-support-agent-plugin",
+  "license": "MIT",
+  "displayName": "SamDesk Support",
+  "skills": "./skills/"
+}

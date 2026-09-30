@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "samdesk-support": {
+      "type": "http",
+      "url": "https://samdesk.nl/support/mcp"
+    }
+  }
+}
