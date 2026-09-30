@@ -91,7 +91,7 @@
         },
         "commerce": false,
         "commerce_description": "Uses an existing SamDesk account. No purchases, payments or subscription changes in plugin tools.",
-        "demo_recording_url": "https://samdesk.nl/static/agent-plugin/support-plugin-review.mp4?v=43e8b95"
+        "demo_recording_url": "https://samdesk.nl/static/agent-plugin/support-plugin-review.mp4"
       }
     }
   },
